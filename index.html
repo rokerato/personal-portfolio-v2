@@ -104,17 +104,22 @@ a:focus-visible, button:focus-visible {
   color: var(--muted);
 }
 .role {
-  margin-top: 18px;
+  margin-top: 16px;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.oneliner {
+  margin-top: 12px;
+  max-width: 21em;
   color: var(--ink);
   font-size: 19px;
   font-weight: 600;
-  letter-spacing: -0.01em;
-}
-.oneliner {
-  margin-top: 14px;
-  max-width: 24em;
-  font-size: 16px;
-  color: var(--body);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  word-break: keep-all;
+  text-wrap: balance;
 }
 .nav { display: none; }
 .side-contact {
@@ -189,6 +194,37 @@ section + section { margin-top: 72px; }
   border-top: 1px solid var(--line);
 }
 .card:first-child { border-top: 0; padding-top: 4px; }
+/* Concept diagrams */
+.diagram {
+  margin: 0 0 20px;
+  padding: 10px 14px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.diagram-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  margin-top: 4px;
+  overflow: visible;
+}
+.dg-muted { color: var(--muted); }
+.dg-accent { color: var(--accent); }
+.dg-label {
+  fill: var(--body);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+}
+.dg-note { fill: var(--muted); }
 .card-tag {
   font-size: 13px;
   font-weight: 500;
@@ -405,12 +441,12 @@ footer {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 96px 0 64px;
+    padding: 96px 0 72px;
   }
   .name { font-size: 46px; }
-  .role { font-size: 20px; }
-  .oneliner { font-size: 17px; }
-  .nav { display: block; margin-top: 56px; }
+  .role { font-size: 16px; margin-top: 20px; }
+  .oneliner { font-size: 23px; margin-top: 14px; }
+  .nav { display: block; margin-top: 48px; }
   .nav a {
     display: inline-flex;
     align-items: center;
@@ -523,15 +559,36 @@ footer {
         <div class="projects">
 
           <article class="card" aria-labelledby="p1-t">
+            <figure class="diagram">
+              <figcaption class="diagram-tag">개념도</figcaption>
+              <svg viewBox="0 0 380 130" preserveAspectRatio="xMidYMid meet" role="img" aria-label="개념도: 거리 위 보행자의 시선이 건물 입면을 가로지르는 미디어 파사드 띠로 먼저 향하는 모습">
+                <g class="dg-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 112H372"/>
+                  <path d="M176 112V20H336V112"/>
+                  <path d="M208 20V52M208 74V112M240 20V52M240 74V112M272 20V52M272 74V112M304 20V52M304 74V112M176 36H336M176 90H336" stroke-width="1.25" stroke-dasharray="1.5 4"/>
+                  <path d="M246 112V96H266V112"/>
+                  <path d="M64 91V104M64 104L59 112M64 104L69 112"/>
+                </g>
+                <circle class="dg-muted" cx="64" cy="86" r="3.5" fill="currentColor"/>
+                <g class="dg-accent" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="176" y="52" width="160" height="22" fill="none" stroke-width="1.5"/>
+                  <path d="M73 83L164 64" fill="none" stroke-width="1.5" stroke-dasharray="4 4"/>
+                  <path d="M156.4 60.4L166 63.6L158.6 70.6" fill="none" stroke-width="1.5"/>
+                </g>
+                <g class="dg-accent" fill="currentColor"><circle cx="186" cy="63" r="1.6"/><circle cx="196" cy="63" r="1.6"/><circle cx="206" cy="63" r="1.6"/><circle cx="216" cy="63" r="1.6"/><circle cx="226" cy="63" r="1.6"/><circle cx="236" cy="63" r="1.6"/><circle cx="246" cy="63" r="1.6"/><circle cx="256" cy="63" r="1.6"/><circle cx="266" cy="63" r="1.6"/><circle cx="276" cy="63" r="1.6"/><circle cx="286" cy="63" r="1.6"/><circle cx="296" cy="63" r="1.6"/><circle cx="306" cy="63" r="1.6"/><circle cx="316" cy="63" r="1.6"/><circle cx="326" cy="63" r="1.6"/></g>
+                <text class="dg-label" x="64" y="127" text-anchor="middle">거리</text>
+                <text class="dg-label" x="164" y="44" text-anchor="end">미디어 파사드</text>
+              </svg>
+            </figure>
             <p class="card-tag">클라이언트 프로젝트 · Front · 2023–24</p>
             <h3 class="card-title" id="p1-t">LG전자 플래그십 D5</h3>
             <p class="card-sub">거리에서 먼저 브랜드를 보여주는 입면</p>
             <p class="figure"><span class="figure-num" lang="en">iF</span><span class="figure-cap">iF 디자인 어워드 2026 건축 부문 수상 프로젝트</span></p>
             <p class="figure-note">수상은 LG전자와 프로젝트 설계팀의 성과이며, 저는 파사드 검토로 참여했습니다. <a href="https://www.lg.com/global/newsroom/lg-story/recognition/lg-electronics-receives-26-awards-at-if-design-award-2026/" target="_blank" rel="noopener">LG전자 뉴스룸 ↗</a></p>
             <dl class="rows">
-              <div class="row"><dt>과제</dt><dd>미디어 파사드가 결합된 입면으로 거리에서 브랜드 존재감을 만들되, 구조와 시공 조건 안에서 실제로 지을 수 있어야 했습니다.</dd></div>
-              <div class="row"><dt>내 역할</dt><dd>파사드 컨설턴트로 입면 컨셉 설계 협의에 참여했습니다. 입면 시스템 대안을 비교하고 접합부 디테일과 소재를 검토해 기술 리포트로 정리했으며, 글로벌 설계팀과 영어로 소통했습니다.</dd></div>
-              <div class="row"><dt>판단</dt><dd>디자인 의도와 현장 조건이 부딪히는 지점마다, 핵심 의도를 지키는 범위에서 구현 가능한 대안을 제안했습니다. 최종 결정은 설계팀과 클라이언트의 몫이었습니다.</dd></div>
+              <div class="row"><dt>과제</dt><dd>미디어 파사드로 거리에서 브랜드 존재감을 만들되, 실제로 지을 수 있어야 했습니다.</dd></div>
+              <div class="row"><dt>내 역할</dt><dd>입면 시스템 대안 비교, 접합부·소재 검토, 기술 리포트 작성. 글로벌 설계팀과 영어로 협업했습니다.</dd></div>
+              <div class="row"><dt>판단</dt><dd>디자인 의도와 현장 조건이 부딪힐 때마다 의도를 지키는 구현안을 제안했습니다. 최종 결정은 설계팀과 클라이언트의 몫이었습니다.</dd></div>
               <div class="row row-learn"><dt>배운 점</dt><dd>브랜드 공간의 설득력은 아이디어가 현장 조건을 통과할 때 생깁니다.</dd></div>
             </dl>
             <ul class="chips" aria-label="키워드">
@@ -540,15 +597,33 @@ footer {
           </article>
 
           <article class="card" aria-labelledby="p2-t">
+            <figure class="diagram">
+              <figcaption class="diagram-tag">개념도</figcaption>
+              <svg viewBox="0 0 380 130" preserveAspectRatio="xMidYMid meet" role="img" aria-label="개념도: 탐색, 옵션, 장바구니, 결제의 네 단계가 한 줄로 이어진 주문 흐름. 앞 두 단계에서 갈라지던 카테고리와 우회 단계는 제거됨">
+                <g transform="translate(0 18)">
+                <g class="dg-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <path d="M41.6 49.3L25.3 25M50.7 49.6L70.4 22.8M146.7 49.6L166.4 22.8" stroke-dasharray="3 4"/>
+                  <path d="M18.5 16.5L25.5 23.5M25.5 16.5L18.5 23.5M70.5 14.5L77.5 21.5M77.5 14.5L70.5 21.5M166.5 14.5L173.5 21.5M173.5 14.5L166.5 21.5"/>
+                </g>
+                <text class="dg-label dg-note" x="186" y="24">덜어낸 단계</text>
+                <g class="dg-accent" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M46 56H334"/>
+                  <path d="M91 52L96 56L91 60M187 52L192 56L187 60M283 52L288 56L283 60" stroke-width="1.5"/>
+                </g>
+                <g class="dg-accent" fill="currentColor"><circle cx="46" cy="56" r="5"/><circle cx="142" cy="56" r="5"/><circle cx="238" cy="56" r="5"/><circle cx="334" cy="56" r="5"/></g>
+                <text class="dg-label" x="46" y="88" text-anchor="middle">탐색</text><text class="dg-label" x="142" y="88" text-anchor="middle">옵션</text><text class="dg-label" x="238" y="88" text-anchor="middle">장바구니</text><text class="dg-label" x="334" y="88" text-anchor="middle">결제</text>
+                </g>
+              </svg>
+            </figure>
             <p class="card-tag">창업학회 인사이더스 · 공동대표 · 2022–23</p>
             <h3 class="card-title" id="p2-t">오버제로 — 디지털 메뉴판 앱</h3>
             <p class="card-sub">‘잘 보여주는 화면’에서 ‘주문을 끝내게 하는 화면’으로</p>
             <p class="figure"><span class="figure-num">4단계</span><span class="figure-cap">탐색 → 옵션 → 장바구니 → 결제, 꼭 필요한 단계만 남긴 주문 흐름</span></p>
             <dl class="rows">
-              <div class="row"><dt>과제</dt><dd>식당 방문 전 사전 주문과 매장 안 QR 주문·결제를 하나로 잇는 서비스였습니다. 정보는 충분했지만, 사용자가 지금 무엇을 해야 하는지는 선명하지 않았습니다.</dd></div>
-              <div class="row"><dt>내 역할</dt><dd>공동대표로 서비스 기획과 UI/UX 설계를 맡았습니다. 주문 시나리오를 직접 여러 번 따라가며 설계안을 점검했습니다.</dd></div>
-              <div class="row"><dt>판단</dt><dd>메뉴 탐색이 길수록 결제 전 이탈 가능성이 커지고, 잘게 나눈 카테고리가 오히려 선택을 어렵게 한다는 점을 발견했습니다. 화면의 목적을 ‘주문 완료’로 다시 정의하고, 다음 행동이 자연스럽게 이어지도록 구조를 정리했습니다.</dd></div>
-              <div class="row row-learn"><dt>배운 점</dt><dd>만드는 사람의 순서가 아니라, 쓰는 사람이 멈추는 지점에서 설계를 시작합니다.</dd></div>
+              <div class="row"><dt>과제</dt><dd>사전 주문과 매장 QR 결제를 잇는 앱. 정보는 충분했지만 다음 행동이 선명하지 않았습니다.</dd></div>
+              <div class="row"><dt>내 역할</dt><dd>공동대표로 서비스 기획과 UI/UX를 맡아, 주문 시나리오를 직접 반복해 따라갔습니다.</dd></div>
+              <div class="row"><dt>판단</dt><dd>긴 탐색과 잘게 나눈 카테고리가 이탈을 부른다고 보고, 화면의 목적을 ‘주문 완료’로 다시 정의했습니다.</dd></div>
+              <div class="row row-learn"><dt>배운 점</dt><dd>쓰는 사람이 멈추는 지점에서 설계를 시작합니다.</dd></div>
             </dl>
             <ul class="chips" aria-label="키워드">
               <li>서비스 기획</li><li>UI/UX</li><li>고객 여정</li>
@@ -556,15 +631,30 @@ footer {
           </article>
 
           <article class="card" aria-labelledby="p3-t">
+            <figure class="diagram">
+              <figcaption class="diagram-tag">개념도</figcaption>
+              <svg viewBox="0 0 380 130" preserveAspectRatio="xMidYMid meet" role="img" aria-label="개념도: 전시장 평면을 입구에서 출구까지 하나로 이어지는 관람 동선과, 동선을 따라 놓인 34개의 도시 전시 지점">
+                <g class="dg-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M40 88V12H340V20M340 44V120H40V108"/>
+                </g>
+                <g class="dg-muted dg-stations" fill="currentColor"><circle cx="51.3" cy="91" r="2.4"/><circle cx="74" cy="105" r="2.4"/><circle cx="96.7" cy="91" r="2.4"/><circle cx="119.3" cy="105" r="2.4"/><circle cx="142" cy="91" r="2.4"/><circle cx="164.7" cy="105" r="2.4"/><circle cx="187.3" cy="91" r="2.4"/><circle cx="210" cy="105" r="2.4"/><circle cx="232.7" cy="91" r="2.4"/><circle cx="255.3" cy="105" r="2.4"/><circle cx="278" cy="91" r="2.4"/><circle cx="300.7" cy="105" r="2.4"/><circle cx="297.3" cy="58" r="2.4"/><circle cx="275.8" cy="72" r="2.4"/><circle cx="254.4" cy="58" r="2.4"/><circle cx="232.9" cy="72" r="2.4"/><circle cx="211.5" cy="58" r="2.4"/><circle cx="190" cy="72" r="2.4"/><circle cx="168.5" cy="58" r="2.4"/><circle cx="147.1" cy="72" r="2.4"/><circle cx="125.6" cy="58" r="2.4"/><circle cx="104.2" cy="72" r="2.4"/><circle cx="82.7" cy="58" r="2.4"/><circle cx="84" cy="39" r="2.4"/><circle cx="108" cy="25" r="2.4"/><circle cx="132" cy="39" r="2.4"/><circle cx="156" cy="25" r="2.4"/><circle cx="180" cy="39" r="2.4"/><circle cx="204" cy="25" r="2.4"/><circle cx="228" cy="39" r="2.4"/><circle cx="252" cy="25" r="2.4"/><circle cx="276" cy="39" r="2.4"/><circle cx="300" cy="25" r="2.4"/><circle cx="324" cy="39" r="2.4"/></g>
+                <g class="dg-accent" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 98H312A16.5 16.5 0 0 0 312 65H72A16.5 16.5 0 0 1 72 32H374"/>
+                  <path d="M20 94L25 98L20 102M360 28L365 32L360 36"/>
+                </g>
+                <text class="dg-label" x="6" y="80">입구</text>
+                <text class="dg-label" x="374" y="58" text-anchor="end">출구</text>
+              </svg>
+            </figure>
             <p class="card-tag">큐레토리얼 어시스턴트 · 2023.06–10</p>
             <h3 class="card-title" id="p3-t">제4회 서울도시건축비엔날레 게스트시티전</h3>
             <p class="card-sub">34개 도시의 전시를 하나의 관람 흐름으로</p>
             <p class="figure"><span class="figure-num">34</span><span class="figure-cap">개 도시가 참여한 전시의 배치·동선·설치 조율</span></p>
             <dl class="rows">
-              <div class="row"><dt>과제</dt><dd>총감독이 설계한 전시 흐름을 지키면서, 통일된 조립식 전시대 안에서 각 작가가 원하는 방식을 구현해야 했습니다. 개별 요청을 그대로 받으면 동선이 끊기고, 흐름만 앞세우면 작품 의도가 약해지는 상황이었습니다.</dd></div>
-              <div class="row"><dt>내 역할</dt><dd>작가들과 소통하며 전시 공간 배치, 관람 동선, 작품 설치를 조율하고 큐레토리얼 콘텐츠를 번역했습니다.</dd></div>
-              <div class="row"><dt>판단</dt><dd>관람객이 어떤 순서로 작품을 만나야 메시지가 자연스럽게 쌓이는지를 기준으로 우선순위를 정하고, 정해진 구조 안에서 작품의 성격이 드러나는 배치를 작가들과 함께 조정했습니다.</dd></div>
-              <div class="row row-learn"><dt>배운 점</dt><dd>화면에서 배운 기준이 공간에서도 그대로 통했습니다. 더 덧붙이기보다, 끝까지 이어지는 흐름을 남깁니다.</dd></div>
+              <div class="row"><dt>과제</dt><dd>총감독의 전시 흐름과 통일된 조립식 전시대 안에서, 작가마다 다른 요구를 함께 살려야 했습니다.</dd></div>
+              <div class="row"><dt>내 역할</dt><dd>작가들과 배치·동선·설치를 조율하고, 큐레토리얼 콘텐츠를 번역했습니다.</dd></div>
+              <div class="row"><dt>판단</dt><dd>관람객이 작품을 만나는 순서를 기준으로 우선순위를 정하고, 정해진 구조 안에서 작품의 성격이 드러나게 배치했습니다.</dd></div>
+              <div class="row row-learn"><dt>배운 점</dt><dd>더 덧붙이기보다, 끝까지 이어지는 흐름을 남깁니다.</dd></div>
             </dl>
             <ul class="chips" aria-label="키워드">
               <li>전시 기획</li><li>관람 동선</li><li>국제 협업</li>
